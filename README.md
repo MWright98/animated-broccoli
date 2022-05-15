@@ -1,6 +1,6 @@
 # Express Note Taker
 
-  ##Deployment
+  ## Deployment
   App is deployed at https://fast-lake-07898.herokuapp.com/
 
   ## Description
