@@ -27,6 +27,20 @@ function createNewNote(body, notesArray) {
     return note;
 }
 
+function deleteNote(id, notesArray) {
+    const noteId = id;
+    notesArray.splice(noteId, 1);
+    notesArray.forEach(element => {
+        let i = notesArray.length;
+        element.id = i - 1;
+        i++;
+    });
+    fs.writeFileSync(
+        path.join(__dirname, "./db/notes.json"),
+        JSON.stringify({ notes: notesArray }, null, 2)
+    );
+}
+
 // Update the home route to return `index.html`
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
@@ -58,7 +72,9 @@ app.post('/api/notes', (req, res) => {
 });
 
 app.delete('/api/notes/:id', (req, res) => {
-    const note = req.body;
+    let id = req.params.id;
+    deleteNote(id, notes);
+    res.status(204).send();
 });
 
 app.listen(PORT, () => {
