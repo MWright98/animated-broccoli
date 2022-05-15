@@ -1,5 +1,8 @@
 # Express Note Taker
 
+  ##Deployment
+  App is deployed at https://fast-lake-07898.herokuapp.com/
+
   ## Description
   Simple web server app to take notes
 
@@ -15,6 +18,7 @@
 
   ## Usage
   Knowledge of Node.js and Express.js
+  
 
   ## License
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
