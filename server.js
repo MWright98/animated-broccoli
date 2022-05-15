@@ -11,11 +11,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
-//function to find note by id
-function findById(id, notesArray) {
-    const result = notesArray.filter(note => note.id === id)[0];
-    return result;
-}
 
 //creates a new note and adds it to the json file
 function createNewNote(body, notesArray) {
